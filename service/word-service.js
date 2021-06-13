@@ -2,19 +2,19 @@ import * as wordRepository from '../persistency/word-repository.js'
 import config from '../environment-config.json';
 
 
-export async function createLecture(pLecture){
+export async function createWord(pLecture){
     return await wordRepository.create(pLecture);
 }
 
-export async function deleteLecture(pId){
+export async function deleteWord(pId){
     return await wordRepository.remove(pId);
 }
 
-export async function getAllLectures(){
+export async function getAllWords(){
     return await wordRepository.getAll();
 }
 
-export async function getLectureById(pId){
+export async function getWordById(pId){
     return await wordRepository.findById(pId);
 }
 
