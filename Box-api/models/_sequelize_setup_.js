@@ -6,18 +6,22 @@ import EnrollmentModel from "./enrollment.model.js";
 import WordModel from "./word.model.js";
 import UserModel from "./userList.model.js";
 
-const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-  host: dbConfig.HOST,
-  dialect: dbConfig.dialect,
-  operatorsAliases: false,
-  pool: {
-    max: dbConfig.pool.max,
-    min: dbConfig.pool.min,
-    acquire: dbConfig.pool.acquire,
-    idle: dbConfig.pool.idle
-  }
+// const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+//   host: dbConfig.HOST,
+//   dialect: dbConfig.dialect,
+//   operatorsAliases: false,
+//   pool: {
+//     max: dbConfig.pool.max,
+//     min: dbConfig.pool.min,
+//     acquire: dbConfig.pool.acquire,
+//     idle: dbConfig.pool.idle
+//   }
+// });
+const sequelize = new Sequelize("box", "root", "14531453", {
+  host: "localhost",
+  dialect: "mysql",
+  port: 3306
 });
-
 const db = {};
 
 db.Sequelize = Sequelize;
