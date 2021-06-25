@@ -2,8 +2,8 @@ import * as userRepository from '../persistency/user-repository.js'
 import config from '../environment-config.json';
 
 
-export async function createUser(pClass){
-    return await userRepository.create(pClass);
+export async function createUser(pUser){
+    return await userRepository.create(pUser);
 }
 
 export async function deleteUser(pId){
@@ -18,6 +18,6 @@ export async function getUserById(pId){
     return await userRepository.findById(pId);
 }
 
-export async function updateClass(pId, pUpdateEntity){
+export async function updateUser(pId, pUpdateEntity){
     return await userRepository.update(pId, pUpdateEntity);
 }

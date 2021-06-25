@@ -18,6 +18,6 @@ export async function getWordById(pId){
     return await wordRepository.findById(pId);
 }
 
-export async function updateLecture(pId, pUpdateEntity){
+export async function updateWord(pId, pUpdateEntity){
     return await wordRepository.update(pId, pUpdateEntity);
 }

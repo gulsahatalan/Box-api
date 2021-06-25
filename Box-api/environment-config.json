@@ -1,6 +1,6 @@
 {
     "HOST": "localhost:3306",
-    "USER": "yusuf",
+    "USER": "root",
     "PASSWORD": "",
     "DB": "box",
     "dialect": "mysql",
