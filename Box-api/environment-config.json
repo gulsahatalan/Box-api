@@ -1,8 +1,8 @@
 {
-    "HOST": "164.90.168.84",
-    "USER": "movie_user",
-    "PASSWORD": "movie_2021!",
-    "DB": "movie_dev",
+    "HOST": "localhost:3306",
+    "USER": "root",
+    "PASSWORD": "",
+    "DB": "box",
     "dialect": "mysql",
     "pool": {
       "max": 5,
@@ -12,3 +12,4 @@
     },
     "populationTimeOutInterval": 60000
 }
+

@@ -34,8 +34,8 @@ app.use('/userList', userRouter);
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
-app.listen(3000, ()=>{
-    console.log("listening on 3000");
+app.listen(8080, ()=>{
+    console.log("listening on 8080");
 });
 
 
