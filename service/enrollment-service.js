@@ -23,11 +23,11 @@ export async function getAllEnrollments(){
     return await enrollmentRepository.getAll();
 }
 
-export async function getEnrollmentsByStundentId(pStudentId){
-    return await enrollmentRepository.getAllByStundentId(pStudentId);
+export async function getEnrollmentsByStundentId(pQuizId){
+    return await enrollmentRepository.getAllByStundentId(pQuizId);
 }
 
-export async function getEnrollmentsByTeacherId(pTeacherId){
-    return await enrollmentRepository.getAllByTeacherId(pTeacherId);
-}
+// export async function getEnrollmentsByTeacherId(pTeacherId){
+//     return await enrollmentRepository.getAllByTeacherId(pTeacherId);
+// }
 

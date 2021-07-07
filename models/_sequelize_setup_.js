@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
 import dbConfig from "../environment-config.json";
-import StudentModel from "./student.model.js";
-import EnrollmentModel from "./enrollment.model.js";
+import QuizModel from "./quiz.model.js";
+import QuizQuestionModel from "./quizQuestion.model.js";
 
 import WordModel from "./word.model.js";
 import UserModel from "./userList.model.js";
@@ -27,9 +27,9 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.student = StudentModel(sequelize, Sequelize);
+db.quiz = QuizModel(sequelize, Sequelize);
 
-db.enrollment = EnrollmentModel(sequelize, Sequelize);
+db.quizQuestion = QuizQuestionModel(sequelize, Sequelize);
 db.word = WordModel(sequelize, Sequelize);
 db.userList = UserModel(sequelize, Sequelize);
 
@@ -38,10 +38,11 @@ db.userList = UserModel(sequelize, Sequelize);
 // Many-to-many-to-many relationships and beyond
 // db.teacher.belongsToMany(db.word, { through: db.user });
 // db.word.belongsToMany(db.teacher, { through: db.user });
-db.userList.belongsTo(db.word);
+ db.userList.belongsTo(db.quiz);
 // db.user.belongsTo(db.teacher);
 // db.teacher.hasMany(db.user);
-db.word.hasMany(db.userList);
+db.quiz.belongsToMany(db.word, { through: db.quizQuestion});
+db.word.belongsToMany(db.quiz, { through: db.quizQuestion})
 
 // db.student.belongsToMany(db.user, { through: db.enrollment });
 // db.user.belongsToMany(db.student, { through: db.enrollment });
@@ -55,6 +56,7 @@ db.word.hasMany(db.userList);
 // .sync({ force: true })
 db.sequelize.sync().then(() => {
     console.log("Drop and re-sync db.");
+
 });
 
 export default db;

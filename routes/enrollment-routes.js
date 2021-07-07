@@ -13,24 +13,24 @@ router.get('/', asyncHandler(async (req, res, next) => {
     res.status(200).send(enrollments);
 }));
 
-router.get('/students/:studentId', asyncHandler(async (req, res, next) =>{
-    let enrollments = await enrollmentService.getEnrollmentsByStundentId(req.params.studentId);
+router.get('/quizs/:quizId', asyncHandler(async (req, res, next) =>{
+    let enrollments = await enrollmentService.getQuizQuestionsByQuizId(req.params.quizId);
     res.status(200).send(enrollments);
 }));
 
-router.get('/teachers/:teacherId', asyncHandler(async (req, res, next) =>{
-    let enrollments = await enrollmentService.getEnrollmentsByTeacherId(req.params.teacherId);
-    res.status(200).send(enrollments);
+// router.get('/teachers/:teacherId', asyncHandler(async (req, res, next) =>{
+//     let enrollments = await enrollmentService.getEnrollmentsByTeacherId(req.params.teacherId);
+//     res.status(200).send(enrollments);
+// }));
+
+router.get('/words/:wordId', asyncHandler(async (req, res, next) =>{
+    let quizQuestions = await enrollmentService.getQuizQuestionsByWordId(req.params.wordId);
+    res.status(200).send(quizQuestions);
 }));
 
-router.get('/lectures/:lectureId', asyncHandler(async (req, res, next) =>{
-    let enrollments = await enrollmentService.getEnrollmentsByLectureId(req.params.lectureId);
-    res.status(200).send(enrollments);
-}));
-
-router.get('/classes/:classId', asyncHandler(async (req, res, next) => {
-    let enrollments = await enrollmentService.getEnrollmentsByInstructorId(req.params.classId);
-    res.status(200).send(enrollments);
-}));
+// router.get('/classes/:classId', asyncHandler(async (req, res, next) => {
+//     let enrollments = await enrollmentService.getEnrollmentsByInstructorId(req.params.classId);
+//     res.status(200).send(enrollments);
+// }));
 
 export default router;

@@ -11,7 +11,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './swagger.json';
 
 // Routers
-import studentsRouter from  './routes/stundent-routes.js';
+import quizsRouter from  './routes/quiz-routes.js';
 // import teachersRouter from  './routes/teacher-routes.js';
 import enrollmentsRouter from  './routes/enrollment-routes.js';
 import wordRouter from  './routes/word-routes.js';
@@ -25,11 +25,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 
-app.use('/students', studentsRouter);
+app.use('/quizs', quizsRouter);
 
-app.use('/enrollments', enrollmentsRouter);
+app.use('/quizQuestions', enrollmentsRouter);
 app.use('/words', wordRouter);
-app.use('/userList', userRouter);
+app.use('/userLists', userRouter);
 
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
