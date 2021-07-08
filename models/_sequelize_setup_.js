@@ -38,14 +38,14 @@ db.userList = UserModel(sequelize, Sequelize);
 // Many-to-many-to-many relationships and beyond
 // db.teacher.belongsToMany(db.word, { through: db.user });
 // db.word.belongsToMany(db.teacher, { through: db.user });
- db.userList.belongsToMany(db.quiz, { through: 'userList_quizs', as: "quizs",
- foreignKey: "user_id"});
-db.quiz.belongsToMany(db.userList, { through: 'userList_quizs', as: "userLists",
-foreignKey: "quiz_id"});
+//  db.userList.belongsToMany(db.quiz, { through: 'userList_quizs', as: "quizs",
+//  foreignKey: "user_id"});
+// db.quiz.belongsToMany(db.userList, { through: 'userList_quizs', as: "userLists",
+// foreignKey: "quiz_id"});
 // db.user.belongsTo(db.teacher);
 // db.teacher.hasMany(db.user);
-db.quiz.belongsToMany(db.word, { through: db.quizQuestion});
-db.word.belongsToMany(db.quiz, { through: db.quizQuestion})
+db.quiz.hasMany(db.word);
+db.word.belongsTo(db.quiz);
 console.log(db.userList)
 // db.student.belongsToMany(db.user, { through: db.enrollment });
 // db.user.belongsToMany(db.student, { through: db.enrollment });
@@ -57,7 +57,7 @@ console.log(db.userList)
 
 // use it to force to create the db from scratch 
 // .sync({ force: true })
-db.sequelize.sync().then(() => {
+db.sequelize.sync({ force: true }).then(() => {
     console.log("Drop and re-sync db.");
 
 });
