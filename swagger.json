@@ -278,7 +278,7 @@
         }
       }
     },
-    "/userList/": {
+    "/userLists/": {
       "get": {
         "tags": [],
         "description": "",
@@ -300,7 +300,7 @@
         }
       }
     },
-    "/userList/{id}": {
+    "/userLists/{id}": {
       "get": {
         "tags": [],
         "description": "",
