@@ -11,8 +11,19 @@ export default (sequelize, Sequelize) => {
       lastName: {
         type: Sequelize.STRING
       },
-      wordCount: {
-        type: Sequelize.INTEGER
+      userName: {
+        type: Sequelize.STRING
+      },
+      eMail:{
+        type: Sequelize.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: {
+          msg: "Must be a valid email address",
+        }
       }
+      }
+      
     });
   };
