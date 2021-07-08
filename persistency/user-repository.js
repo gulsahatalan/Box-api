@@ -13,9 +13,9 @@ export async function getAll(){
 export async function findById(pId){
   return await db.userList.findOne({
     where: {id: pId},
-    // include: [
-    //   { model: db.word},
-    // ]
+    include: [
+      { model: db.quiz},
+    ]
   });
 }
 

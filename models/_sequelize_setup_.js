@@ -38,12 +38,15 @@ db.userList = UserModel(sequelize, Sequelize);
 // Many-to-many-to-many relationships and beyond
 // db.teacher.belongsToMany(db.word, { through: db.user });
 // db.word.belongsToMany(db.teacher, { through: db.user });
- db.userList.belongsTo(db.quiz);
+ db.userList.belongsToMany(db.quiz, { through: 'userList_quizs', as: "quizs",
+ foreignKey: "user_id"});
+db.quiz.belongsToMany(db.userList, { through: 'userList_quizs', as: "userLists",
+foreignKey: "quiz_id"});
 // db.user.belongsTo(db.teacher);
 // db.teacher.hasMany(db.user);
 db.quiz.belongsToMany(db.word, { through: db.quizQuestion});
 db.word.belongsToMany(db.quiz, { through: db.quizQuestion})
-
+console.log(db.userList)
 // db.student.belongsToMany(db.user, { through: db.enrollment });
 // db.user.belongsToMany(db.student, { through: db.enrollment });
 // db.enrollment.belongsTo(db.student);
