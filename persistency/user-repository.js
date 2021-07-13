@@ -4,9 +4,9 @@ import logger from '../service/logging-service.js'
 export async function getAll(){
   return await db.userList.findAll(    
     {
-      include: [
-        { model: db.word},
-      ]
+      // include: [
+      //   { model: db.word},
+      // ]
     }); 
 }
 
@@ -14,7 +14,7 @@ export async function findById(pId){
   return await db.userList.findOne({
     where: {id: pId},
     include: [
-      { model: db.word},
+      { model: db.quiz},
     ]
   });
 }

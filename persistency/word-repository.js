@@ -23,3 +23,9 @@ export async function update(pId, pUpdatedEntity){
     where: { id: pId }
   });
 }
+
+export async function findWordsByQuizId(pQuizId){
+  return await db.word.findAll({
+    where: { quizId: pQuizId }
+  })
+}
