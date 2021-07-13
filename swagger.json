@@ -278,6 +278,25 @@
         }
       }
     },
+    "/words/wordList/{quizId}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "quizId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/userLists/": {
       "get": {
         "tags": [],

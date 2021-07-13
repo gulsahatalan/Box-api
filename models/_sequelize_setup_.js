@@ -45,8 +45,9 @@ db.userList = UserModel(sequelize, Sequelize);
 // db.user.belongsTo(db.teacher);
 // db.teacher.hasMany(db.user);
 db.quiz.hasMany(db.word);
+// db.user.belongsTo(db.teacher);
+// db.teacher.hasMany(db.user);
 db.word.belongsTo(db.quiz);
-console.log(db.userList)
 // db.student.belongsToMany(db.user, { through: db.enrollment });
 // db.user.belongsToMany(db.student, { through: db.enrollment });
 // db.enrollment.belongsTo(db.student);
@@ -57,7 +58,7 @@ console.log(db.userList)
 
 // use it to force to create the db from scratch 
 // .sync({ force: true })
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync().then(() => {
     console.log("Drop and re-sync db.");
 
 });

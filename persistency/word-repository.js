@@ -24,8 +24,8 @@ export async function update(pId, pUpdatedEntity){
   });
 }
 
-export async function getWordsByQuizId(pId){
-  return await db.word.destroy({
-    where: { id: pId }
+export async function findWordsByQuizId(pQuizId){
+  return await db.word.findAll({
+    where: { quizId: pQuizId }
   })
 }
