@@ -18,6 +18,7 @@ export async function getQuizById(pId){
     return await quizRepository.findById(pId);
 }
 
+
 export async function updateQuiz(pId, pUpdateEntity){
     return await quizRepository.update(pId, pUpdateEntity);
 }

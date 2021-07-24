@@ -22,6 +22,6 @@ export async function updateWord(pId, pUpdateEntity){
     return await wordRepository.update(pId, pUpdateEntity);
 }
 
-export async function getWordByQuizId(pId){
-    return await wordRepository.findWordsByQuizId(pId);
+export async function getWordListByQuizId(quizId, userId){
+    return await wordRepository.findWordsByQuizId(quizId, userId);
 }

@@ -1,5 +1,5 @@
 export default (sequelize, Sequelize) => {
-    return sequelize.define("userList", {
+    return sequelize.define("player", {
       id: {
           type: Sequelize.INTEGER,
           primaryKey: true,

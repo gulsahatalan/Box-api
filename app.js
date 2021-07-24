@@ -33,7 +33,7 @@ app.use('/userLists', userRouter);
 
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, ()=>{
     console.log("listening on "+port);
 });

@@ -24,8 +24,25 @@ export async function update(pId, pUpdatedEntity){
   });
 }
 
-export async function findWordsByQuizId(pQuizId){
+export async function findWordsByQuizId(pQuizId, pUserId){
   return await db.word.findAll({
-    where: { quizId: pQuizId }
-  })
+    include: [
+      { model: db.quiz,
+        where:{
+          id: pQuizId
+        }},
+      { model: db.quizContainer, 
+        include: [
+          { model: db.userAnswer,
+            where: {
+              found:{
+                [Op.lte]: 5
+              },
+              userId: pUserId
+            }
+          }
+        ]
+      }
+    ]
+  });
 }

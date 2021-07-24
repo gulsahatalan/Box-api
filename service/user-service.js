@@ -21,3 +21,13 @@ export async function getUserById(pId){
 export async function updateUser(pId, pUpdateEntity){
     return await userRepository.update(pId, pUpdateEntity);
 }
+// static async sendUserAnswerById(userId, quizId, wordId, pAnswer) {
+
+//     let response = await axios.get(`${config.backendURL}/words/quiz`)
+
+//     return response.data
+//   }
+
+export async function sendUserAnswerById(userId, quizId, wordId, pAnswer){
+    return await userRepository.send(userId, quizId, wordId, pAnswer);
+}

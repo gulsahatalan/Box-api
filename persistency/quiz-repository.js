@@ -4,7 +4,7 @@ export async function getAll(){
   return await db.quiz.findAll(); 
 }
 
-export async function findById(pId){
+export async function findById(pId, pPlayerId){
   return await db.quiz.findByPk(pId);
 }
 
