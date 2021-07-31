@@ -5,8 +5,8 @@ export default (sequelize, Sequelize) => {
         primaryKey: true,
           autoIncrement: true
       },
-      retry: {
-        type: Sequelize.INTEGER
+      name: {
+        type: Sequelize.STRING
       }
      
     });

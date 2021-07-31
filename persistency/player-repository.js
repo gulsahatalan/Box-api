@@ -35,7 +35,7 @@ export async function send(pId, pUpdatedEntityuserId, quizId, wordId, pAnswer){
   return await db.player.send(userId, quizId, wordId, pAnswer, {
     where: { id: pId },
     include: [
-      { model: db.userAnswer,
+      { model: db.playerAnswer,
         where: {
           found:{
             [Op.gt]: +1

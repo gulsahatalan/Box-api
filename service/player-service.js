@@ -1,4 +1,4 @@
-import * as userRepository from '../persistency/user-repository.js'
+import * as userRepository from '../persistency/player-repository.js'
 import config from '../environment-config.json';
 
 

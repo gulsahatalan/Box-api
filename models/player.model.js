@@ -16,14 +16,13 @@ export default (sequelize, Sequelize) => {
       },
       eMail:{
         type: Sequelize.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: {
-          msg: "Must be a valid email address",
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: {
+            msg: "Must be a valid email address",
+          }
         }
       }
-      }
-      
     });
   };

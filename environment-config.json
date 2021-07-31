@@ -1,8 +1,8 @@
 {
-    "HOST": "localhost:3306",
-    "USER": "root",
-    "PASSWORD": "",
-    "DB": "box",
+    "HOST": "164.90.168.84",
+    "USER": "box_user",
+    "PASSWORD": "gulsah2021!",
+    "DB": "box_db",
     "dialect": "mysql",
     "pool": {
       "max": 5,

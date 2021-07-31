@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import * as userService from '../service/user-service.js'
+import * as userService from '../service/player-service.js'
 
 import asyncHandler from 'express-async-handler';
 

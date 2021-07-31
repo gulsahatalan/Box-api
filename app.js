@@ -12,10 +12,9 @@ import swaggerDocument from './swagger.json';
 
 // Routers
 import quizsRouter from  './routes/quiz-routes.js';
-// import teachersRouter from  './routes/teacher-routes.js';
 import enrollmentsRouter from  './routes/enrollment-routes.js';
 import wordRouter from  './routes/word-routes.js';
-import userRouter from  './routes/user-routes.js';
+import userRouter from  './routes/player-routes.js';
 
 let app = express();
 
@@ -25,11 +24,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 
-app.use('/quizs', quizsRouter);
+app.use('/quizes', quizsRouter);
 
-app.use('/quizQuestions', enrollmentsRouter);
+app.use('/questions', enrollmentsRouter);
 app.use('/words', wordRouter);
-app.use('/userLists', userRouter);
+app.use('/players', userRouter);
 
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
@@ -39,5 +38,3 @@ app.listen(port, ()=>{
 });
 
 
-// to be deleted
-import repo from './persistency/data-population-repository.js';

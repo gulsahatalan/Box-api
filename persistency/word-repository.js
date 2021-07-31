@@ -33,7 +33,7 @@ export async function findWordsByQuizId(pQuizId, pUserId){
         }},
       { model: db.quizContainer, 
         include: [
-          { model: db.userAnswer,
+          { model: db.playerAnswer,
             where: {
               found:{
                 [Op.lte]: 5

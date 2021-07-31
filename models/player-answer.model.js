@@ -1,13 +1,11 @@
 export default (sequelize, Sequelize) => {
-    return sequelize.define("userQuiz", {
+    return sequelize.define("playerAnswer", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
-        
       },
-    
-      counter: {
+      found: {
         type: Sequelize.INTEGER
       }
     });

@@ -2,15 +2,13 @@ import db from "../models/_sequelize_setup_.js"
 import faker from 'faker';
 
 export default function(){}
-/*
-setInterval(async () => {
 
-  // create teacher
-  // create the lecture if not exists
-  // create a teacher
-  // add the created lecture to the newly vreated teacher
-  // find or create an instructor (a teacher with an lecture assignment)
-  // add teacher and instructor to the enrollment
+setInterval(async () => {
+ // create a player
+ // create a quiz
+ // create words
+ // map some words to a quiz
+ // 
 
   let student = await db.student.create({
     firstName: faker.name.firstName(),
@@ -19,11 +17,9 @@ setInterval(async () => {
     className: faker.animal.type(),
     age: Math.random()*20
   });
-
   let lectureList = await db.lecture.findOrCreate(
     { where: {name: "Math"}}
   )
-
   let teacher = await db.teacher.create(
     {
       firstName: faker.name.firstName(),
@@ -32,7 +28,6 @@ setInterval(async () => {
   )  
   
   teacher.addLecture(lectureList[0]);
-
   let classList = await db.class.findOrCreate(
     { 
       where: {
@@ -47,7 +42,4 @@ console.log(classList)
     studentId: student.id,
     instructorId: classList[0].id
   })
-
 }, 5*1000); 
-
-*/
