@@ -1,5 +1,5 @@
 export default (sequelize, Sequelize) => {
-    return sequelize.define("playerQuiz", {
+    return sequelize.define("player_quiz", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
