@@ -58,7 +58,7 @@ db.quiz.hasMany(db.playerQuiz);
 
 // use it to force to create the db from scratch 
 // .sync({ force: true })
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync().then(() => {
     console.log("Drop and re-sync db.");
 });
 
